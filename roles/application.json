@@ -1,0 +1,9 @@
+{
+  "name": "application",
+  "description": "Application role",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "run_list": [
+      "recipe[flashcards-cookbook::default]"
+  ]
+}
