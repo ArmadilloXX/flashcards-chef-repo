@@ -4,6 +4,6 @@
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-      "recipe[flashcards-cookbook::default]"
+    "recipe[flashcards-cookbook::application]"
   ]
 }
