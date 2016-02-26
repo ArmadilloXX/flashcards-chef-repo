@@ -1,7 +1,9 @@
 DEPENDENCIES
   flashcards-cookbook
-    git: git://github.com/ArmadilloXX/flashcards-cookbook.git
-    revision: 92f746813bb10db4ba2827411a18517c5b9f609c
+    path: ../flashcards-cookbook
+  redisio
+    git: git://github.com/brianbianco/redisio.git
+    revision: 3d4c1f694408db5f20b65dc92cf8396831bf2b8d
 
 GRAPH
   apt (2.9.2)
@@ -19,7 +21,6 @@ GRAPH
   compat_resource (12.7.3)
   database (4.0.9)
     postgresql (>= 1.0.0)
-  dmg (2.3.0)
   elasticsearch (2.1.1)
     apt (>= 0.0.0)
     ark (>= 0.0.0)
@@ -35,14 +36,9 @@ GRAPH
     nginx (~> 2.7.6)
     phantomjs (>= 0.0.0)
     postgresql (~> 4.0.0)
-    rbenv (~> 1.7.1)
     redisio (>= 0.0.0)
+    ruby_build (>= 0.0.0)
     simple-kibana (~> 0.4.3)
-  git (4.3.7)
-    build-essential (>= 0.0.0)
-    dmg (>= 0.0.0)
-    windows (>= 0.0.0)
-    yum-epel (>= 0.0.0)
   htpasswd (0.2.4)
     python (>= 0.0.0)
   imagemagick (0.2.3)
@@ -69,16 +65,12 @@ GRAPH
   python (1.4.6)
     build-essential (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  rbenv (1.7.1)
-    apt (>= 0.0.0)
-    build-essential (>= 0.0.0)
-    git (>= 0.0.0)
-    ohai (>= 1.1)
-  redisio (2.3.0)
+  redisio (2.4.0)
     build-essential (>= 0.0.0)
     ulimit (>= 0.1.2)
   rsyslog (4.0.0)
     compat_resource (>= 0.0.0)
+  ruby_build (0.8.0)
   runit (1.7.6)
     packagecloud (>= 0.0.0)
   seven_zip (2.0.0)
