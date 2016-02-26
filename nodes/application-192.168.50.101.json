@@ -1,5 +1,19 @@
 {
   "run_list": [
-    "role[application]"
-  ]
+    "role[application]",
+    "role[database]",
+    "recipe[flashcards-cookbook::deploy]"
+  ],
+  "application": {
+    "deploy": {
+      "user": "vagrant"
+    },
+    "database": {
+      "user": "vagrant",
+      "password": "vagrant",
+      "host": "127.0.0.1",
+      "port": 5432
+    },
+    "env_vars": {}
+  }
 }
