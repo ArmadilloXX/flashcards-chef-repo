@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.berkshelf.enabled = true
       config.vm.hostname = my_node[:name]
       config.vm.network :private_network, ip: my_node[:ip]
-      #TODO Add feature to use different ports 
+      #TODO Add feature to use different ports
       my_node[:ports].each do |port|
         config.vm.network :forwarded_port, guest: port, host: port
       end
@@ -34,6 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         chef.log_level = "info"
         chef.environments_path = "environments"
         chef.environment = "development"
+        # chef.environment = "production"
         chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
         chef.roles_path = "roles"
         chef.data_bags_path = "data_bags"
