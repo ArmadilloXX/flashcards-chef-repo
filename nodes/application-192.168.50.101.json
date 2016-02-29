@@ -2,9 +2,11 @@
   "run_list": [
     "role[application]",
     "role[database]",
+    "role[redis]",
     "recipe[flashcards-cookbook::deploy]"
   ],
   "application": {
+    "fqdn": "localhost",
     "deploy": {
       "user": "vagrant"
     },
