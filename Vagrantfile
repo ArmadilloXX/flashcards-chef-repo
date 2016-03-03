@@ -30,15 +30,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.provider "virtualbox" do |vb|
         vb.memory = my_node[:memory]
       end
-      config.vm.provision :chef_solo do |chef|
-        chef.log_level = "info"
-        chef.environments_path = "environments"
-        chef.environment = "development"
-        # chef.environment = "production"
-        chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
-        chef.roles_path = "roles"
-        chef.data_bags_path = "data_bags"
-        chef.json.merge!(JSON.parse(IO.read("nodes/#{my_node[:name]}-#{my_node[:ip]}.json")))
+      # config.vm.provision :chef_solo do |chef|
+      #   chef.log_level = "info"
+      #   chef.environments_path = "environments"
+      #   chef.environment = "development"
+      #   # chef.environment = "production"
+      #   chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+      #   chef.roles_path = "roles"
+      #   chef.data_bags_path = "data_bags"
+      #   chef.json.merge!(JSON.parse(IO.read("nodes/#{my_node[:name]}-#{my_node[:ip]}.json")))
+      # end
+      config.vm.provision :chef_client do |chef|
+        chef.chef_server_url = "https://api.chef.io/organizations/flashcards"
+        chef.validation_key_path = "/Users/Ilya/Coding/RoR/mkdev/flashcards-chef-repo/.chef/flashcards-validator.pem"
+        chef.client_key_path = "/Users/Ilya/Coding/RoR/mkdev/flashcards-chef-repo/.chef/dolgirev.pem"
+        chef.node_name = "#{my_node[:name]}-#{my_node[:ip]}"
+        chef.validation_client_name = "flashcards-validator"
+        chef.delete_node = true
+        # chef.delete_client = true
       end
     end
   end

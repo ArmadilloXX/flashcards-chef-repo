@@ -19,6 +19,7 @@ environment_path         ["#{current_dir}/../environments"]
 data_bag_path            ["#{current_dir}/../data_bags"]
 # encrypted_data_bag_secret "data_bag_key"
 
+knife[:editor] = "subl"
 knife[:berkshelf_path] = "cookbooks"
 knife[:vault_mode] = "solo"
 Chef::Config[:ssl_verify_mode] = :verify_peer if defined? ::Chef
