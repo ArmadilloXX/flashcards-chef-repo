@@ -1,5 +1,5 @@
 {
-  "name": "Elasticsearch",
+  "name": "elasticsearch",
   "description": "Elasticsearch role",
   "chef_type": "role",
   "json_class": "Chef::Role",

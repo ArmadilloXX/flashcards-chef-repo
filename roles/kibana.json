@@ -1,5 +1,5 @@
 {
-  "name": "Kibana",
+  "name": "kibana",
   "description": "Kibana role",
   "chef_type": "role",
   "json_class": "Chef::Role",

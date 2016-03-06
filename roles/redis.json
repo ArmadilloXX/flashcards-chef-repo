@@ -1,5 +1,5 @@
 {
-  "name": "Redis",
+  "name": "redis",
   "description": "Redis role",
   "chef_type": "role",
   "json_class": "Chef::Role",
