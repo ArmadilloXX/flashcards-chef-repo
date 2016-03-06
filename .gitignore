@@ -2,3 +2,4 @@
 .chef/
 .vagrant/
 Berksfile.lock
+.zero-knife.rb
