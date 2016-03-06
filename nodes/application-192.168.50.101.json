@@ -1,4 +1,5 @@
 {
+  "name": "application-192.168.50.101",
   "run_list": [
     "role[application]",
     "role[database]",
