@@ -3,16 +3,16 @@
 # role_path        "roles"
 # environment_path "environments"
 # data_bag_path    "data_bags"
-#encrypted_data_bag_secret "data_bag_key"
+# encrypted_data_bag_secret "data_bag_key"
 current_dir = File.dirname(__FILE__)
 log_level                :info
 log_location             STDOUT
 node_name                "dolgirev"
 client_key               "#{current_dir}/dolgirev.pem"
-chef_server_url          "http://127.0.0.1:8889"
-# validation_client_name   "flashcards-validator"
-# validation_key           "#{current_dir}/flashcards-validator.pem"
-# chef_server_url          "https://api.chef.io/organizations/flashcards"
+# chef_server_url          "http://127.0.0.1:8889"
+validation_client_name   "flashcards-validator"
+validation_key           "#{current_dir}/flashcards-validator.pem"
+chef_server_url          "https://api.chef.io/organizations/flashcards"
 cookbook_path            ["#{current_dir}/../cookbooks"]
 node_path                ["#{current_dir}/../nodes"]
 role_path                ["#{current_dir}/../roles"]
