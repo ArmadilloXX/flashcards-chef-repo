@@ -32,6 +32,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       if Vagrant.has_plugin?("vagrant-omnibus")
         config.omnibus.chef_version = "latest"
       end
+      if Vagrant.has_plugin?("vagrant-cachier")
+        config.cache.scope = :machine
+      end
       config.vm.box = VM_BOX
       config.vm.synced_folder ".", "/vagrant", disabled: true
       config.berkshelf.enabled = true
