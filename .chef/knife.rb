@@ -7,7 +7,8 @@ data_bag_path            ["#{current_dir}/../data_bags"]
 log_level                :info
 log_location             STDOUT
 client_key               "#{current_dir}/dummy.pem"
-chef_server_url          "http://192.168.50.1"
+chef_server_url          "http://127.0.0.1:8889"
+node_name                "workstation"
 
 # encrypted_data_bag_secret "data_bag_key"
 
