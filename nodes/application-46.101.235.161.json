@@ -1,9 +1,0 @@
-{
-  "name": "application-46.101.235.161",
-  "run_list": [
-    "role[application]",
-    "role[database]",
-    "role[redis]",
-    "recipe[flashcards-cookbook::deploy]"
-  ]
-}
