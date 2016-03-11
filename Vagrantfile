@@ -10,21 +10,21 @@ VAGRANTFILE_API_VERSION = "2"
 VM_BOX = "enemy-of-the-state/centos-7.1_kernel-devel-fixed"
 Vagrant.require_version ">= 1.5.0"
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+my_nodes = [
+  { name: 'application',   ip: '192.168.50.101', memory: 1024, ports: [
+    { host: 3000, guest: 3000 },
+    { host: 5432, guest: 5432 },
+    { host: 6379, guest: 6379 }
+    ]
+  },
+  { name: 'elasticsearch', ip: '192.168.50.102', memory: 1024, ports: [
+    { host: 9200, guest: 9200 }
+    ]
+  },
+  { name: 'kibana',        ip: '192.168.50.103', memory: 1024, ports: [] }
+]
 
-  my_nodes = [
-    { name: 'application',   ip: '192.168.50.101', memory: 1024, ports: [
-      { host: 3000, guest: 3000 },
-      { host: 5432, guest: 5432 },
-      { host: 6379, guest: 6379 }
-      ]
-    },
-    { name: 'elasticsearch', ip: '192.168.50.102', memory: 1024, ports: [
-      { host: 9200, guest: 9200 }
-      ]
-    },
-    { name: 'kibana',        ip: '192.168.50.103', memory: 1024, ports: [] }
-  ]
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   my_nodes.each do |my_node|
 
@@ -46,34 +46,33 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.provider "virtualbox" do |vb|
         vb.memory = my_node[:memory]
       end
-      config.vm.provision :chef_solo do |chef|
-        node = JSON.parse(IO.read("nodes/#{my_node[:name]}-#{my_node[:ip]}.json"))
-        chef.run_list = node["run_list"]
-        chef.log_level = "info"
-        chef.node_name = "#{my_node[:name]}-#{my_node[:ip]}"
-        chef.environments_path = "environments"
-        chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
-        chef.roles_path = "roles"
-        chef.data_bags_path = "data_bags"
-        chef.environment = "development"
-        # chef.custom_config_path = "/Users/Ilya/Coding/RoR/mkdev/flashcards-chef-repo/.chef/knife.rb" # NEED TO SETUP
-        # chef.encrypted_data_bag_secret_key_path # NEED TO SETUP
-        # chef.provisioning_path # NEED TO SETUP
-      end
-
-      # config.vm.provision :chef_client do |chef|
-      #   chef.chef_server_url = Chef::Config[:chef_server_url]
-      #   chef.client_key_path = Chef::Config[:client_key]
-      #   chef.validation_key_path = Chef::Config[:validation_key]
-      #   chef.validation_client_name = Chef::Config[:validation_client_name]
+      # config.vm.provision :chef_solo do |chef|
+      #   node = JSON.parse(IO.read("nodes/#{my_node[:name]}-#{my_node[:ip]}.json"))
+      #   chef.run_list = node["run_list"]
+      #   chef.log_level = "info"
       #   chef.node_name = "#{my_node[:name]}-#{my_node[:ip]}"
-      #   chef.encrypted_data_bag_secret_key_path # NEED TO SETUP
+      #   chef.environments_path = "environments"
+      #   chef.cookbooks_path = ["cookbooks", "site-cookbooks"]
+      #   chef.roles_path = "roles"
+      #   chef.data_bags_path = "data_bags"
       #   chef.environment = "development"
-      #   chef.provisioning_path = "/etc/chef"
-      #   chef.log_level = :info
-      #   chef.delete_node = true
-      #   chef.delete_client = true
+      #   # chef.custom_config_path = "/Users/Ilya/Coding/RoR/mkdev/flashcards-chef-repo/.chef/knife.rb" # NEED TO SETUP
+      #   # chef.encrypted_data_bag_secret_key_path # NEED TO SETUP
+      #   # chef.provisioning_path # NEED TO SETUP
       # end
+
+      config.vm.provision :chef_client do |chef|
+        chef.chef_server_url = Chef::Config[:chef_server_url]
+        chef.client_key_path = Chef::Config[:client_key]
+        chef.validation_key_path = Chef::Config[:validation_key]
+        chef.node_name = "#{my_node[:name]}-#{my_node[:ip]}"
+        if Chef::Config[:encrypted_data_bag_secret]
+          chef.encrypted_data_bag_secret = Chef::Config[:encrypted_data_bag_secret]
+        end
+        chef.environment = "development"
+        chef.provisioning_path = "/etc/chef"
+        chef.log_level = Chef::Config[:log_level]
+      end
     end
   end
 end
