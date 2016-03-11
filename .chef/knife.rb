@@ -10,7 +10,7 @@ client_key               "#{current_dir}/dolgirev.pem"
 validation_key           "#{current_dir}/dolgirev.pem"
 chef_server_url          "http://192.168.50.1:8889"
 node_name                "workstation"
-
+environment              "development"
 
 # data_bag_encrypt_version 2
 # encrypted_data_bag_secret "data_bag_key"
