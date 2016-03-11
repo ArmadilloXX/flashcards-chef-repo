@@ -70,7 +70,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         chef.chef_server_url = Chef::Config[:chef_server_url]
         chef.client_key_path = Chef::Config[:client_key]
         chef.validation_key_path = Chef::Config[:validation_key]
-        chef.node_name = "#{node_config[:name]}-#{node_config[:ipaddress]}"
+        chef.node_name = "#{node}-#{node_config[:ipaddress]}"
         if Chef::Config[:encrypted_data_bag_secret]
           chef.encrypted_data_bag_secret =
             Chef::Config[:encrypted_data_bag_secret]
