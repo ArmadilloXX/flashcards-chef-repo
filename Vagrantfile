@@ -17,6 +17,12 @@ nodes = {
       { host: 3000, guest: 3000 },
       { host: 5432, guest: 5432 },
       { host: 6379, guest: 6379 }
+    ],
+    run_list: [
+      "role[application]",
+      "role[database]",
+      "role[redis]",
+      "recipe[flashcards-cookbook::deploy]"
     ]
   },
   elasticsearch: {
@@ -78,6 +84,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         chef.environment = Chef::Config[:environment]
         chef.provisioning_path = "/etc/chef"
         chef.log_level = Chef::Config[:log_level]
+        chef.run_list = node_config[:run_list]
       end
     end
   end

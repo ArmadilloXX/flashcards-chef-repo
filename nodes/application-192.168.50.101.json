@@ -1,9 +1,3 @@
 {
-  "name": "application-192.168.50.101",
-  "run_list": [
-    "role[application]",
-    "role[database]",
-    "role[redis]",
-    "recipe[flashcards-cookbook::deploy]"
-  ]
+  "name": "application-192.168.50.101"
 }
