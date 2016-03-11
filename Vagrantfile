@@ -31,12 +31,18 @@ nodes = {
     memory: 1024,
     forwardports: [
       { host: 9200, guest: 9200 }
+    ],
+    run_list: [
+      "role[elasticsearch]"
     ]
   },
   kibana: {
     hostname: "kibana",
     ipaddress: "192.168.50.103",
-    memory: 512
+    memory: 512,
+    run_list: [
+      "role[kibana]"
+    ]
   }
 }
 
