@@ -6,8 +6,8 @@ environment_path         ["#{current_dir}/../environments"]
 data_bag_path            ["#{current_dir}/../data_bags"]
 log_level                :info
 log_location             STDOUT
-client_key               "#{current_dir}/dolgirev.pem"
-validation_key           "#{current_dir}/dolgirev.pem"
+client_key               "#{current_dir}/dummy.pem"
+validation_key           "#{current_dir}/dummy.pem"
 chef_server_url          "http://192.168.50.1:8889"
 node_name                "workstation"
 environment              "development"
