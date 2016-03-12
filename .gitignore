@@ -1,4 +1,5 @@
 /cookbooks/
+!.chef/dummy.pem
 .chef/
 .vagrant/
 Berksfile.lock
