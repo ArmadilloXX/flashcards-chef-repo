@@ -5,5 +5,12 @@
   "json_class": "Chef::Role",
   "run_list": [
       "recipe[flashcards-cookbook::kibana]"
-  ]
+  ],
+  "default_attributes": {
+    "kibana": {
+      "config": {
+        "elasticsearch_url": "http://192.168.50.102:9200"
+      }
+    }
+  }
 }
