@@ -10,6 +10,7 @@
     "application": {
       "fqdn": "localhost",
       "deploy": {
+        "revision": "add_kinesis",
         "user": "vagrant"
       }
     }
