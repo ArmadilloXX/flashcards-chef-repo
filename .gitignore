@@ -2,5 +2,7 @@
 !.chef/dummy.pem
 .chef/
 .vagrant/
+nodes/
+clients/
 Berksfile.lock
 .zero-knife.rb
