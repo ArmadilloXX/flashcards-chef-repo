@@ -1,10 +1,6 @@
 {
   "id": "kibana",
   "version": "4.3.1",
-  "access": {
-    "username": "testuser",
-    "password": "testpass"
-  },
   "config": {
     "base_dir": "/opt/kibana"
   },
