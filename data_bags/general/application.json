@@ -1,3 +1,6 @@
 {
-  "id": "application"
+  "id": "application",
+  "name": "flashcards",
+  "ruby_version": "2.2.3",
+  "app_server": "unicorn"
 }

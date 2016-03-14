@@ -1,3 +1,4 @@
 {
-  "id": "elasticsearch"
+  "id": "elasticsearch",
+  "version": "2.1.1"
 }

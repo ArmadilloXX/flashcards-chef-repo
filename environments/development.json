@@ -4,7 +4,16 @@
     "chef_type": "environment",
     "json_class": "Chef::Environment",
     "default_attributes": {
+      "redisio": {
+        "version": "3.0.6"
+      },
+      "java": {
+        "jdk_version": 8
+      },
       "application": {
+        "deploy": {
+          "revision": "add_kinesis"
+        },
         "environment": "development",
         "env_vars": {}
       }
