@@ -12,10 +12,10 @@ chef_server_url          "http://192.168.50.1:8889"
 node_name                "workstation"
 environment              "development"
 
-# data_bag_encrypt_version 2
-# encrypted_data_bag_secret "data_bag_key"
-# knife[:secret_file]
+data_bag_encrypt_version 2
+encrypted_data_bag_secret_key_path "#{current_dir}/my_secret_key"
 
+knife[:secret_file] = "#{current_dir}/my_secret_key"
 knife[:editor] = "vim"
 knife[:berkshelf_path] = "cookbooks"
 knife[:vault_mode] = "client"
