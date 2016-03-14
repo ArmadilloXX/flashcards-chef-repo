@@ -1,0 +1,6 @@
+{
+  "id": "kibana",
+  "config": {
+    "elasticsearch_url": "http://192.168.50.102:9200"
+  }
+}
