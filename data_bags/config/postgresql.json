@@ -3,6 +3,6 @@
   "config": {
     "data_directory": "/var/lib/pgsql/9.4/data",
     "listen_addresses": "*",
-    "port": 5132
+    "port": 5432
   }
 }
