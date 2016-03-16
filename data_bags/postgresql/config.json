@@ -1,5 +1,19 @@
 {
-  "id": "postgresql",
+  "id": "config",
+  "enable_pgdg_yum": true,
+  "version": "9.4",
+  "dir": "/var/lib/pgsql/9.4/data",
+  "setup_script": "postgresql94-setup",
+  "client": {
+    "packages": ["postgresql94", "postgresql94-devel"]
+  },
+  "server": {
+    "packages": ["postgresql94-server"],
+    "service_name": "postgresql-9.4"
+  },
+  "contrib": {
+    "packages": ["postgresql94-contrib"]
+  },
   "config": {
     "data_directory": "/var/lib/pgsql/9.4/data",
     "listen_addresses": "*",

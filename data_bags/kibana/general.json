@@ -1,9 +1,0 @@
-{
-  "id": "kibana",
-  "version": "4.3.1",
-  "config": {
-    "base_dir": "/opt/kibana"
-  },
-  "download_url": "https://download.elastic.co/kibana/kibana/kibana-4.3.1-linux-x64.tar.gz",
-  "checksum": "c6a91921a0055714fd24fb94a70b7057f43492da6bd8c4f2f1acbf0964bf09b9"
-}
