@@ -1,5 +1,5 @@
 current_dir = File.dirname(__FILE__)
-cookbook_path            ["#{current_dir}/../cookbooks", "#{current_dir}/../site-cookbooks"]
+cookbook_path            ["#{current_dir}/../cookbooks"]
 node_path                ["#{current_dir}/../nodes"]
 role_path                ["#{current_dir}/../roles"]
 environment_path         ["#{current_dir}/../environments"]
