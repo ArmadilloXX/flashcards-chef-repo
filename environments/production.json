@@ -6,7 +6,9 @@
     "default_attributes": {
       "application": {
         "environment": "production",
-        "env_vars": {}
+        "env_vars": {
+            // "SECRET_KEY_BASE"
+        }
       }
     }
 }
