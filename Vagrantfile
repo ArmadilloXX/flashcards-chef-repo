@@ -41,7 +41,7 @@ nodes = {
     ipaddress: "192.168.50.103",
     memory: 512,
     forwardports: [
-      { host: 5601, guest: 82 }
+      { host: 5601, guest: 80 }
     ],
     run_list: [
       "role[kibana]"
@@ -67,7 +67,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       config.vm.box = VM_BOX
       config.vm.synced_folder ".", "/vagrant", disabled: true
 
-      config.vm.hostname = node_config[:name]
+      config.vm.hostname = node_config[:hostname]
       config.vm.network :private_network, ip: node_config[:ipaddress]
       if node_config.has_key?(:forwardports)
         node_config[:forwardports].each do |port|
