@@ -4,6 +4,7 @@
   "ruby_version": "2.2.3",
   "app_server": "unicorn",
   "fqdn": "localhost",
+  "ssl": false,
   "deploy": {
     "user": "deployer",
     "deploy_to": "/var/www/flashcards",
@@ -12,9 +13,3 @@
     "force_assets": true
   }
 }
-
-// # default['application']['ssl_crt']
-// # default['application']['ssl_key']
-// # default['application']['public_key']
-// # default['application']['deploy_key']
-// # default["application"]["ssl"]
