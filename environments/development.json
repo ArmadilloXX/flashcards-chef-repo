@@ -11,6 +11,7 @@
         "jdk_version": 8
       },
       "application": {
+        "nginx_port": 3000,
         "deploy": {
           "revision": "add_kinesis"
         },
