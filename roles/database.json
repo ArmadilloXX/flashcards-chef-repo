@@ -3,17 +3,6 @@
   "description": "Database role",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "run_list": [
-      "recipe[flashcards-cookbook::database]"
-  ],
-  "default_attributes": {
-    "application": {
-      "database": {
-        "host": "127.0.0.1",
-        "port": 5432,
-        "user": "vagrant",
-        "password": "vagrant"
-      }
-    }
-  }
+  "run_list": ["recipe[flashcards-cookbook::database]"],
+  "default_attributes": {}
 }

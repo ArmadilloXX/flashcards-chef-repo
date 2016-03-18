@@ -3,8 +3,6 @@
   "description": "Kibana role",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "run_list": [
-      "recipe[flashcards-cookbook::kibana]"
-  ],
+  "run_list": ["recipe[flashcards-cookbook::kibana]"],
   "default_attributes": {}
 }

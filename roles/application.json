@@ -3,16 +3,6 @@
   "description": "Application role",
   "chef_type": "role",
   "json_class": "Chef::Role",
-  "run_list": [
-    "recipe[flashcards-cookbook::application]"
-  ],
-  "default_attributes": {
-    "application": {
-      "fqdn": "localhost",
-      "deploy": {
-        "revision": "add_kinesis",
-        "user": "vagrant"
-      }
-    }
-  }
+  "run_list": ["recipe[flashcards-cookbook::application]"],
+  "default_attributes": {}
 }
