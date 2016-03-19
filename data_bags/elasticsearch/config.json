@@ -1,4 +1,5 @@
 {
   "id": "config",
-  "version": "2.2.0"
+  "version": "2.2.0",
+  "base_dir": "/opt"
 }
