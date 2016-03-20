@@ -5,7 +5,9 @@
   "checksum": "c6a91921a0055714fd24fb94a70b7057f43492da6bd8c4f2f1acbf0964bf09b9",
   "config": {
     "base_dir": "/opt/kibana",
-    "elasticsearch_url": "http://192.168.50.102:9200"
+    "elasticsearch_url": "http://192.168.50.102:9200",
+    "elasticsearch.username": "kibana4-server",
+    "elasticsearch.password": "password"
   },
   "fqdn": "localhost"
 }
