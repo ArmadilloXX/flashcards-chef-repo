@@ -39,7 +39,7 @@ nodes = {
     ipaddress: "192.168.50.103",
     memory: 512,
     forwardports: [
-      { host: 5601, guest: 80 }
+      { host: 5601, guest: 5601 }
     ],
     run_list: ["role[kibana]"]
   }
