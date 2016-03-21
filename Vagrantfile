@@ -37,7 +37,7 @@ nodes = {
   kibana: {
     hostname: "kibana",
     ipaddress: "192.168.50.103",
-    memory: 512,
+    memory: 1024,
     forwardports: [
       { host: 5601, guest: 5601 }
     ],
