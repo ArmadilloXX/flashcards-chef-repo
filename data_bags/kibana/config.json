@@ -1,13 +1,17 @@
 {
   "id": "config",
-  "version": "4.3.1",
-  "download_url": "https://download.elastic.co/kibana/kibana/kibana-4.3.1-linux-x64.tar.gz",
-  "checksum": "c6a91921a0055714fd24fb94a70b7057f43492da6bd8c4f2f1acbf0964bf09b9",
+  "version": "4.4.2",
+  "download_url": "https://download.elastic.co/kibana/kibana/kibana-4.4.2-linux-x64.tar.gz",
+  "checksum": "ce0504d7a9440200b49851a64e010ddf8a8ed7b881135f6121d594ba1c0d6cfd",
+  "user": "vagrant",
+  "group": "vagrant",
   "config": {
-    "base_dir": "/opt/kibana",
     "elasticsearch_url": "http://192.168.50.102:9200",
     "elasticsearch.username": "kibana4-server",
-    "elasticsearch.password": "password"
+    "elasticsearch.password": "password",
+    "shield.encryptionKey": "my_secret_key",
+    "server.ssl.key": "/opt/kibana/ssl/flashcards.key",
+    "server.ssl.cert": "/opt/kibana/ssl/flashcards.crt"
   },
   "fqdn": "localhost"
 }
