@@ -8,7 +8,7 @@ log_level                :info
 log_location             STDOUT
 client_key               "#{current_dir}/dummy.pem"
 validation_key           "#{current_dir}/dummy.pem"
-chef_server_url          "http://192.168.50.1:8889"
+chef_server_url          "http://192.168.1.102:8889"
 node_name                "workstation"
 environment              "development"
 
