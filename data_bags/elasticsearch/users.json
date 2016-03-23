@@ -1,0 +1,20 @@
+{
+  "id": "users",
+  "users": [
+    {
+      "username": "es_admin",
+      "password": "adminpass",
+      "role": "admin"
+    },
+    {
+      "username": "kibana4-server",
+      "password": "password",
+      "role": "kibana4_server"
+    },
+    {
+      "username": "testuser",
+      "password": "testpass",
+      "role": "kibana4"
+    }
+  ]
+}
