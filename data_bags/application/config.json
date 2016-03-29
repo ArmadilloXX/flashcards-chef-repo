@@ -5,6 +5,7 @@
   "app_server": "unicorn",
   "fqdn": "localhost",
   "ssl": false,
+  "env_vars": {},
   "deploy": {
     "user": "deployer",
     "deploy_to": "/var/www/flashcards",
