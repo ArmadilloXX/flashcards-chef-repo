@@ -4,13 +4,14 @@
   "ruby_version": "2.2.3",
   "app_server": "unicorn",
   "fqdn": "localhost",
+  "nginx_port": 3000,
   "ssl": false,
   "env_vars": {},
   "deploy": {
     "user": "deployer",
     "deploy_to": "/var/www/flashcards",
     "repository": "https://github.com/ArmadilloXX/flashcards.git",
-    "revision": "master",
+    "revision": "add_kinesis",
     "force_assets": true
   }
 }
