@@ -17,11 +17,8 @@ This repo helps to set up development environment for Flashcards application or 
   - Run `vagrant up`
 
   I prefer that one. `knife serve` is more verbose and it creates some new directories in your repo, such as `clients` and `nodes`. You can get additional info about your machines from there.
+  If you have issues with net-ssh gem versions (knife-solo 0.5.1 etc.) uncompatibility please use Chef Zero as descripted above.
 
 ##TODO
 
   - Test Vagrant plugin config - got some issues with knife-serve when assign custom IP
-  - Try different config with vagrant-chef-zero plugin
-  - Try to increase timeout for systemd kibana service start/stop operations
-
-
