@@ -4,6 +4,9 @@
     "chef_type": "environment",
     "json_class": "Chef::Environment",
     "default_attributes": {
+      "ruby_build": {
+        "upgrade": true
+      },
       "redisio": {
         "version": "3.0.6"
       },
