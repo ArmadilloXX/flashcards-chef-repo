@@ -5,7 +5,7 @@
   "dir": "/var/lib/pgsql/9.4/data",
   "setup_script": "postgresql94-setup",
   "client": {
-    "packages": ["postgresql94", "postgresql94-devel"]
+    "packages": ["postgresql94", "postgresql94-devel", "postgresql94-libs"]
   },
   "server": {
     "packages": ["postgresql94-server"],
