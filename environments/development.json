@@ -1,25 +1,17 @@
 {
-    "name": "development",
-    "description": "Development environment",
-    "chef_type": "environment",
-    "json_class": "Chef::Environment",
-    "default_attributes": {
-      "ruby_build": {
-        "upgrade": true
+  "name": "development",
+  "description": "Development environment",
+  "chef_type": "environment",
+  "json_class": "Chef::Environment",
+  "default_attributes": {
+    "application": {
+      "fqdn": "localhost",
+      "ssl": false,
+      "deploy": {
+        "revision": "add_kinesis"
       },
-      "redisio": {
-        "version": "3.0.6"
-      },
-      "java": {
-        "jdk_version": 8
-      },
-      "application": {
-        "nginx_port": 3000,
-        "deploy": {
-          "revision": "add_kinesis"
-        },
-        "environment": "development",
-        "env_vars": {}
-      }
+      "environment": "development",
+      "env_vars": {}
     }
+  }
 }
