@@ -7,3 +7,4 @@ clients/
 data_bags/flashcards/flashcards_secrets.json
 Berksfile.lock
 .zero-knife.rb
+.DS_Store
