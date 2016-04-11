@@ -60,6 +60,7 @@
   },
   "kibana": {
     "version": "4.4.2",
+    "shield_version": "2.2.1",
     "download_url": "https://download.elastic.co/kibana/kibana/kibana-4.4.2-linux-x64.tar.gz",
     "checksum": "ce0504d7a9440200b49851a64e010ddf8a8ed7b881135f6121d594ba1c0d6cfd",
     "dir": "/opt",
