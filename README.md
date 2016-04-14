@@ -12,7 +12,7 @@ This repo helps to set up development environment for Flashcards application or 
   - Run `vagrant up` for all VMs or `vagrant up [vm_name]` for specific VM
 
   ####OR
-
+  - Run `berks install` in repo directory
   - `knife serve --chef-zero-host IP` (I do recommend to use IP assigned to your main network interface to avoid potential issues when assign the custom one).
   - Run `vagrant up`
 
