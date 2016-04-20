@@ -14,9 +14,7 @@ nodes = {
     ipaddress: "192.168.50.101",
     memory: 1024,
     forwardports: [
-      { host: 3000, guest: 3000 },
-      # { host: 5432, guest: 5432 },
-      # { host: 6379, guest: 6379 }
+      { host: 3000, guest: 80 },
     ],
     run_list: [
       "role[application]",
@@ -29,18 +27,14 @@ nodes = {
     hostname: "elasticsearch",
     ipaddress: "192.168.50.102",
     memory: 1024,
-    forwardports: [
-      # { host: 9200, guest: 9200 }
-    ],
+    forwardports: [],
     run_list: ["role[elasticsearch]"]
   },
   kibana: {
     hostname: "kibana",
     ipaddress: "192.168.50.103",
     memory: 1024,
-    forwardports: [
-      { host: 5601, guest: 5601 }
-    ],
+    forwardports: [],
     run_list: ["role[kibana]"]
   }
 }
