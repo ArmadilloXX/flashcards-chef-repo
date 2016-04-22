@@ -3,7 +3,9 @@
 This repo helps to set up development environment for Flashcards application or deploy it.
 
 ##Requirements
-  - Vagrant Chef Plugin
+  - Berkshelf
+  - Vagrant
+  - Vagrant Chef Plugin (run `vagrant plugin install chef`)
 
 ##USAGE
   - Run `berks install` in repo directory
